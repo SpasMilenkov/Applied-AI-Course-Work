@@ -63,12 +63,11 @@ public class ClientServiceImpl(IClientRepository clientRepository) : IClientServ
     public async Task<RegionTableData> CalculateStatisticsAsync(int regionId)
     {
         var data = await clientRepository.GetClientsWithLoanApplicationsAsync(regionId);
-    
-        // Create a list of LoanDto objects from the aggregated data
+        
         var loanDtoList = data
             .SelectMany(c => c.LoanApplications)
             .Select(la => new LoanDto(
-                RequestStatus: la.RequestStatus ?? "No Status",  // Handle nulls, or you can aggregate statuses if needed
+                RequestStatus: la.RequestStatus ?? "No Status",
                 Bad: la.Bad,
                 GrantedAmount: la.CreditProduct.LoanAmountApproved,
                 RepaidAmount: la.CreditProduct.RepaidAmount

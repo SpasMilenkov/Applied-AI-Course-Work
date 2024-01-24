@@ -30,16 +30,13 @@ public partial class BankingDbContext : DbContext
             entity.HasKey(e => e.ClientId).HasName("clients_pkey");
             entity.ToTable("clients");
             entity.Property(e => e.ClientId).HasColumnName("clientid");
-            // entity.Property(e => e.AddressRegion).HasMaxLength(255).HasColumnName("app_addressregion");
             entity.Property(e => e.NewClient).HasColumnName("cph_newclient");
-            //THE SQL TILL HERE ALREADY EXISTS
-            entity.Property(e => e.RegionId).HasColumnName("app_addressregion"); // Configure the foreign key column name if needed
-        
-            // Configure the relationship between Client and Region
+            entity.Property(e => e.RegionId).HasColumnName("app_addressregion");
+            
             entity.HasOne(c => c.Region)
                 .WithMany(r => r.Clients)
                 .HasForeignKey(c => c.RegionId)
-                .HasConstraintName("address_region"); // Optional: specify the foreign key constraint name
+                .HasConstraintName("address_region");
         });
 
         modelBuilder.Entity<Region>(entity =>
