@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Banking.Data.Models\Banking.Data.Models.csproj" />
+      <ProjectReference Include="..\Banking.Data\Banking.Data.csproj" />
+      <ProjectReference Include="..\Banking.Dto\Banking.Dto.csproj" />
+    </ItemGroup>
+
+</Project>
