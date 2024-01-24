@@ -1,0 +1,506 @@
+[
+  {
+    "regionName": "23",
+    "statistics": {
+      "totalApplications": 4112,
+      "goodCount": 147,
+      "goodPercentage": 3.57,
+      "badCount": 3965,
+      "badPercentage": 96.43,
+      "ntuCount": 410,
+      "ntuPercentage": 9.97,
+      "acceptCount": 1429,
+      "acceptPercentage": 34.75,
+      "rejectCount": 1530,
+      "rejectPercentage": 37.21,
+      "grantedAmountTotal": 8381004.87,
+      "repaidAmountTotal": 2264061.19
+    }
+  },
+  {
+    "regionName": "16",
+    "statistics": {
+      "totalApplications": 14434,
+      "goodCount": 529,
+      "goodPercentage": 3.66,
+      "badCount": 13905,
+      "badPercentage": 96.34,
+      "ntuCount": 1339,
+      "ntuPercentage": 9.28,
+      "acceptCount": 5125,
+      "acceptPercentage": 35.51,
+      "rejectCount": 5302,
+      "rejectPercentage": 36.73,
+      "grantedAmountTotal": 28921006.75,
+      "repaidAmountTotal": 8213855.37
+    }
+  },
+  {
+    "regionName": "18",
+    "statistics": {
+      "totalApplications": 12155,
+      "goodCount": 433,
+      "goodPercentage": 3.56,
+      "badCount": 11722,
+      "badPercentage": 96.44,
+      "ntuCount": 1135,
+      "ntuPercentage": 9.34,
+      "acceptCount": 4264,
+      "acceptPercentage": 35.08,
+      "rejectCount": 4479,
+      "rejectPercentage": 36.85,
+      "grantedAmountTotal": 24071634.45,
+      "repaidAmountTotal": 6783738.82
+    }
+  },
+  {
+    "regionName": "17",
+    "statistics": {
+      "totalApplications": 13454,
+      "goodCount": 484,
+      "goodPercentage": 3.6,
+      "badCount": 12970,
+      "badPercentage": 96.4,
+      "ntuCount": 1213,
+      "ntuPercentage": 9.02,
+      "acceptCount": 4776,
+      "acceptPercentage": 35.5,
+      "rejectCount": 4987,
+      "rejectPercentage": 37.07,
+      "grantedAmountTotal": 27002477.66,
+      "repaidAmountTotal": 7633873.7
+    }
+  },
+  {
+    "regionName": "11",
+    "statistics": {
+      "totalApplications": 10580,
+      "goodCount": 318,
+      "goodPercentage": 3.01,
+      "badCount": 10262,
+      "badPercentage": 96.99,
+      "ntuCount": 910,
+      "ntuPercentage": 8.6,
+      "acceptCount": 3751,
+      "acceptPercentage": 35.45,
+      "rejectCount": 3926,
+      "rejectPercentage": 37.11,
+      "grantedAmountTotal": 21236735.96,
+      "repaidAmountTotal": 5925016.81
+    }
+  },
+  {
+    "regionName": "10",
+    "statistics": {
+      "totalApplications": 8912,
+      "goodCount": 337,
+      "goodPercentage": 3.78,
+      "badCount": 8575,
+      "badPercentage": 96.22,
+      "ntuCount": 808,
+      "ntuPercentage": 9.07,
+      "acceptCount": 3068,
+      "acceptPercentage": 34.43,
+      "rejectCount": 3394,
+      "rejectPercentage": 38.08,
+      "grantedAmountTotal": 17862468.7,
+      "repaidAmountTotal": 4777569.57
+    }
+  },
+  {
+    "regionName": "14",
+    "statistics": {
+      "totalApplications": 14536,
+      "goodCount": 519,
+      "goodPercentage": 3.57,
+      "badCount": 14017,
+      "badPercentage": 96.43,
+      "ntuCount": 1354,
+      "ntuPercentage": 9.31,
+      "acceptCount": 5107,
+      "acceptPercentage": 35.13,
+      "rejectCount": 5390,
+      "rejectPercentage": 37.08,
+      "grantedAmountTotal": 28942002.82,
+      "repaidAmountTotal": 8063831.08
+    }
+  },
+  {
+    "regionName": "22",
+    "statistics": {
+      "totalApplications": 5599,
+      "goodCount": 191,
+      "goodPercentage": 3.41,
+      "badCount": 5408,
+      "badPercentage": 96.59,
+      "ntuCount": 524,
+      "ntuPercentage": 9.36,
+      "acceptCount": 1945,
+      "acceptPercentage": 34.74,
+      "rejectCount": 2114,
+      "rejectPercentage": 37.76,
+      "grantedAmountTotal": 11283226.19,
+      "repaidAmountTotal": 3131484.51
+    }
+  },
+  {
+    "regionName": "6",
+    "statistics": {
+      "totalApplications": 2977,
+      "goodCount": 109,
+      "goodPercentage": 3.66,
+      "badCount": 2868,
+      "badPercentage": 96.34,
+      "ntuCount": 286,
+      "ntuPercentage": 9.61,
+      "acceptCount": 1049,
+      "acceptPercentage": 35.24,
+      "rejectCount": 1106,
+      "rejectPercentage": 37.15,
+      "grantedAmountTotal": 5921466.38,
+      "repaidAmountTotal": 1655330.84
+    }
+  },
+  {
+    "regionName": "12",
+    "statistics": {
+      "totalApplications": 12249,
+      "goodCount": 422,
+      "goodPercentage": 3.45,
+      "badCount": 11827,
+      "badPercentage": 96.55,
+      "ntuCount": 1106,
+      "ntuPercentage": 9.03,
+      "acceptCount": 4339,
+      "acceptPercentage": 35.42,
+      "rejectCount": 4449,
+      "rejectPercentage": 36.32,
+      "grantedAmountTotal": 24783699.53,
+      "repaidAmountTotal": 7008989.92
+    }
+  },
+  {
+    "regionName": "7",
+    "statistics": {
+      "totalApplications": 4147,
+      "goodCount": 129,
+      "goodPercentage": 3.11,
+      "badCount": 4018,
+      "badPercentage": 96.89,
+      "ntuCount": 365,
+      "ntuPercentage": 8.8,
+      "acceptCount": 1451,
+      "acceptPercentage": 34.99,
+      "rejectCount": 1568,
+      "rejectPercentage": 37.81,
+      "grantedAmountTotal": 8121385.62,
+      "repaidAmountTotal": 2226456.81
+    }
+  },
+  {
+    "regionName": "13",
+    "statistics": {
+      "totalApplications": 13492,
+      "goodCount": 482,
+      "goodPercentage": 3.57,
+      "badCount": 13010,
+      "badPercentage": 96.43,
+      "ntuCount": 1184,
+      "ntuPercentage": 8.78,
+      "acceptCount": 4771,
+      "acceptPercentage": 35.36,
+      "rejectCount": 5019,
+      "rejectPercentage": 37.2,
+      "grantedAmountTotal": 26802747.67,
+      "repaidAmountTotal": 7504066.43
+    }
+  },
+  {
+    "regionName": "20",
+    "statistics": {
+      "totalApplications": 8985,
+      "goodCount": 317,
+      "goodPercentage": 3.53,
+      "badCount": 8668,
+      "badPercentage": 96.47,
+      "ntuCount": 835,
+      "ntuPercentage": 9.29,
+      "acceptCount": 3218,
+      "acceptPercentage": 35.82,
+      "rejectCount": 3266,
+      "rejectPercentage": 36.35,
+      "grantedAmountTotal": 18065039.56,
+      "repaidAmountTotal": 5160877.81
+    }
+  },
+  {
+    "regionName": "19",
+    "statistics": {
+      "totalApplications": 10616,
+      "goodCount": 411,
+      "goodPercentage": 3.87,
+      "badCount": 10205,
+      "badPercentage": 96.13,
+      "ntuCount": 970,
+      "ntuPercentage": 9.14,
+      "acceptCount": 3714,
+      "acceptPercentage": 34.98,
+      "rejectCount": 3981,
+      "rejectPercentage": 37.5,
+      "grantedAmountTotal": 21070542.08,
+      "repaidAmountTotal": 5924701.87
+    }
+  },
+  {
+    "regionName": "9",
+    "statistics": {
+      "totalApplications": 7046,
+      "goodCount": 241,
+      "goodPercentage": 3.42,
+      "badCount": 6805,
+      "badPercentage": 96.58,
+      "ntuCount": 635,
+      "ntuPercentage": 9.01,
+      "acceptCount": 2485,
+      "acceptPercentage": 35.27,
+      "rejectCount": 2614,
+      "rejectPercentage": 37.1,
+      "grantedAmountTotal": 14240153.5,
+      "repaidAmountTotal": 4085867.3
+    }
+  },
+  {
+    "regionName": "1",
+    "statistics": {
+      "totalApplications": 673,
+      "goodCount": 23,
+      "goodPercentage": 3.42,
+      "badCount": 650,
+      "badPercentage": 96.58,
+      "ntuCount": 65,
+      "ntuPercentage": 9.66,
+      "acceptCount": 229,
+      "acceptPercentage": 34.03,
+      "rejectCount": 251,
+      "rejectPercentage": 37.3,
+      "grantedAmountTotal": 1318082.91,
+      "repaidAmountTotal": 354103.96
+    }
+  },
+  {
+    "regionName": "15",
+    "statistics": {
+      "totalApplications": 14441,
+      "goodCount": 551,
+      "goodPercentage": 3.82,
+      "badCount": 13890,
+      "badPercentage": 96.18,
+      "ntuCount": 1300,
+      "ntuPercentage": 9,
+      "acceptCount": 5193,
+      "acceptPercentage": 35.96,
+      "rejectCount": 5337,
+      "rejectPercentage": 36.96,
+      "grantedAmountTotal": 29201186.94,
+      "repaidAmountTotal": 8169037.69
+    }
+  },
+  {
+    "regionName": "21",
+    "statistics": {
+      "totalApplications": 7081,
+      "goodCount": 245,
+      "goodPercentage": 3.46,
+      "badCount": 6836,
+      "badPercentage": 96.54,
+      "ntuCount": 611,
+      "ntuPercentage": 8.63,
+      "acceptCount": 2554,
+      "acceptPercentage": 36.07,
+      "rejectCount": 2569,
+      "rejectPercentage": 36.28,
+      "grantedAmountTotal": 13770798.29,
+      "repaidAmountTotal": 3924389.17
+    }
+  },
+  {
+    "regionName": "24",
+    "statistics": {
+      "totalApplications": 2968,
+      "goodCount": 96,
+      "goodPercentage": 3.23,
+      "badCount": 2872,
+      "badPercentage": 96.77,
+      "ntuCount": 284,
+      "ntuPercentage": 9.57,
+      "acceptCount": 1086,
+      "acceptPercentage": 36.59,
+      "rejectCount": 1087,
+      "rejectPercentage": 36.62,
+      "grantedAmountTotal": 6025774.99,
+      "repaidAmountTotal": 1824901.79
+    }
+  },
+  {
+    "regionName": "25",
+    "statistics": {
+      "totalApplications": 2003,
+      "goodCount": 97,
+      "goodPercentage": 4.84,
+      "badCount": 1906,
+      "badPercentage": 95.16,
+      "ntuCount": 171,
+      "ntuPercentage": 8.54,
+      "acceptCount": 691,
+      "acceptPercentage": 34.5,
+      "rejectCount": 769,
+      "rejectPercentage": 38.39,
+      "grantedAmountTotal": 4112656.57,
+      "repaidAmountTotal": 1147482.12
+    }
+  },
+  {
+    "regionName": "27",
+    "statistics": {
+      "totalApplications": 875,
+      "goodCount": 23,
+      "goodPercentage": 2.63,
+      "badCount": 852,
+      "badPercentage": 97.37,
+      "ntuCount": 75,
+      "ntuPercentage": 8.57,
+      "acceptCount": 305,
+      "acceptPercentage": 34.86,
+      "rejectCount": 330,
+      "rejectPercentage": 37.71,
+      "grantedAmountTotal": 1704758.76,
+      "repaidAmountTotal": 492080.73
+    }
+  },
+  {
+    "regionName": "8",
+    "statistics": {
+      "totalApplications": 5548,
+      "goodCount": 197,
+      "goodPercentage": 3.55,
+      "badCount": 5351,
+      "badPercentage": 96.45,
+      "ntuCount": 516,
+      "ntuPercentage": 9.3,
+      "acceptCount": 1928,
+      "acceptPercentage": 34.75,
+      "rejectCount": 2042,
+      "rejectPercentage": 36.81,
+      "grantedAmountTotal": 11017740.63,
+      "repaidAmountTotal": 3088011.75
+    }
+  },
+  {
+    "regionName": "5",
+    "statistics": {
+      "totalApplications": 1959,
+      "goodCount": 59,
+      "goodPercentage": 3.01,
+      "badCount": 1900,
+      "badPercentage": 96.99,
+      "ntuCount": 188,
+      "ntuPercentage": 9.6,
+      "acceptCount": 634,
+      "acceptPercentage": 32.36,
+      "rejectCount": 767,
+      "rejectPercentage": 39.15,
+      "grantedAmountTotal": 4020228.78,
+      "repaidAmountTotal": 954774.32
+    }
+  },
+  {
+    "regionName": "26",
+    "statistics": {
+      "totalApplications": 1370,
+      "goodCount": 48,
+      "goodPercentage": 3.5,
+      "badCount": 1322,
+      "badPercentage": 96.5,
+      "ntuCount": 125,
+      "ntuPercentage": 9.12,
+      "acceptCount": 476,
+      "acceptPercentage": 34.74,
+      "rejectCount": 506,
+      "rejectPercentage": 36.93,
+      "grantedAmountTotal": 2757340.32,
+      "repaidAmountTotal": 756503.21
+    }
+  },
+  {
+    "regionName": "3",
+    "statistics": {
+      "totalApplications": 838,
+      "goodCount": 36,
+      "goodPercentage": 4.3,
+      "badCount": 802,
+      "badPercentage": 95.7,
+      "ntuCount": 81,
+      "ntuPercentage": 9.67,
+      "acceptCount": 302,
+      "acceptPercentage": 36.04,
+      "rejectCount": 287,
+      "rejectPercentage": 34.25,
+      "grantedAmountTotal": 1661824.26,
+      "repaidAmountTotal": 431149.36
+    }
+  },
+  {
+    "regionName": "4",
+    "statistics": {
+      "totalApplications": 1306,
+      "goodCount": 49,
+      "goodPercentage": 3.75,
+      "badCount": 1257,
+      "badPercentage": 96.25,
+      "ntuCount": 104,
+      "ntuPercentage": 7.96,
+      "acceptCount": 472,
+      "acceptPercentage": 36.14,
+      "rejectCount": 491,
+      "rejectPercentage": 37.6,
+      "grantedAmountTotal": 2634756.07,
+      "repaidAmountTotal": 739523.52
+    }
+  },
+  {
+    "regionName": "28",
+    "statistics": {
+      "totalApplications": 1149,
+      "goodCount": 45,
+      "goodPercentage": 3.92,
+      "badCount": 1104,
+      "badPercentage": 96.08,
+      "ntuCount": 86,
+      "ntuPercentage": 7.48,
+      "acceptCount": 420,
+      "acceptPercentage": 36.55,
+      "rejectCount": 435,
+      "rejectPercentage": 37.86,
+      "grantedAmountTotal": 2320859.17,
+      "repaidAmountTotal": 693402.39
+    }
+  },
+  {
+    "regionName": "2",
+    "statistics": {
+      "totalApplications": 493,
+      "goodCount": 16,
+      "goodPercentage": 3.25,
+      "badCount": 477,
+      "badPercentage": 96.75,
+      "ntuCount": 57,
+      "ntuPercentage": 11.56,
+      "acceptCount": 165,
+      "acceptPercentage": 33.47,
+      "rejectCount": 179,
+      "rejectPercentage": 36.31,
+      "grantedAmountTotal": 979355.45,
+      "repaidAmountTotal": 271543.93
+    }
+  }
+]
