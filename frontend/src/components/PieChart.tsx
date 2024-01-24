@@ -1,10 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
+import PieData from '../interfaces/PieData';
 
-const PieChart = ({ data }) => {
+interface PieProps{
+  data?: PieData[];
+}
+
+const PieChart = ({ data }: PieProps) => {
   const chartRef = useRef();
 
   useEffect(() => {
+    if(data === undefined) return;
+
     // Specify the chart’s dimensions.
     const width = 928;
     const height = Math.min(width, 500);

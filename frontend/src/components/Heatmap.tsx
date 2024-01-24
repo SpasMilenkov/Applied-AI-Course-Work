@@ -1,15 +1,48 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import HeatmapChartData from '../interfaces/HeatmapChartData';
+import { useQuery } from '@tanstack/react-query';
+import { fetchHeatmapData } from '../services/dataService';
 
-const Heatmap = ({data}) => {
+const Heatmap = () => {
+  const [selectedStatus, setSelectedStatus] = useState('');
+  const [heatmapData, setHeatmapData] = useState<HeatmapChartData[]>([]);
+
   const chartRef = useRef(null);
-  
-  const margin = { top: 80, right: 25, bottom: 30, left: 40 };
-  const width = 450 - margin.left - margin.right;
-  const height = 450 - margin.top - margin.bottom;
-  
+  const margin = { top: 80, right: 25, bottom: 30, left: 60 };
+  const width = 500 - margin.left - margin.right;
+  const height = 500 - margin.top - margin.bottom;
+
+  const options = ['Bad Rate', 'New Customer Rate', 'NTU Rate', 'Application Count'];
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['heatmap'],
+    queryFn: fetchHeatmapData,
+  })
+
+  useEffect(() =>{
+    if(data === undefined) return; 
+
+    const dataWithFilter = data.map((item) =>{
+      const heatItem = {
+        duration: item.duration,
+        loanAmount: item.loanLendedAmount,
+        value: selectedStatus === 'Application Count' ? 
+        item.applicationCount : selectedStatus === 'Bad Rate' ?
+        item.badRate : selectedStatus === 'New Customer Rate' ?
+        item.newCustomerRate : item.ntuRate
+      }
+
+      return heatItem;
+    })
+
+    setHeatmapData(dataWithFilter);
+  }, [data, selectedStatus])
+
   useEffect(() => {
     if (data === undefined) return;
+
+    d3.select(chartRef.current).selectAll('svg').remove();
 
     const svg = d3
     .select(chartRef.current)
@@ -19,8 +52,8 @@ const Heatmap = ({data}) => {
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    const rows = Array.from(new Set(data.map((d) => d.duration)));
-    const cols = Array.from(new Set(data.map((d) => d.loanAmount)));
+    const rows = Array.from(new Set(heatmapData.map((d) => d.duration)));
+    const cols = Array.from(new Set(heatmapData.map((d) => d.loanAmount)));
 
     const x = d3.scaleBand().range([0, width]).domain(rows).padding(0.05);
     const y = d3.scaleBand().range([height, 0]).domain(cols).padding(0.05);
@@ -40,11 +73,13 @@ const Heatmap = ({data}) => {
     .select('.domain')
     .remove();
 
-    const myColor = d3.scaleSequential().interpolator(d3.interpolateInferno).domain([1, 100]);
+    const myColor = d3.scaleSequential()
+    .interpolator(d3.interpolateInferno)
+    .domain([1, (selectedStatus === 'Application Count' ? 32000 : 100)]);
 
     const squares = svg
     .selectAll()
-    .data(data)
+    .data(heatmapData)
     .enter()
     .append('g')
 
@@ -73,7 +108,7 @@ const Heatmap = ({data}) => {
     
     svg
     .selectAll()
-    .data(data)
+    .data(heatmapData)
     .enter()
     .append('rect')
     .attr('x', (d) => x(d.duration))
@@ -87,7 +122,7 @@ const Heatmap = ({data}) => {
     .style('stroke', 'none')
     .style('opacity', 0.8)
 
-  }, [data]);
+  }, [heatmapData]);
 
   return (
     <div>
@@ -97,7 +132,24 @@ const Heatmap = ({data}) => {
           A heatmap with just data
         </p>
       </div>
-      <div ref={chartRef}></div>
+      
+      <select
+      name='Filter'
+        value={selectedStatus}
+        onChange={(e) => setSelectedStatus(e.target.value)}
+        className='filter'
+      >
+        <option value="" disabled>
+          Filter
+        </option>
+        {options.map((option, index) => (
+          <option key={index} value={option} className='filter-option'>
+            {option}
+          </option>
+        ))}
+      </select>
+      {isLoading && <span className="loader"></span>}
+      <div className='heatmap-container' ref={chartRef}></div>
     </div>
   );
 };

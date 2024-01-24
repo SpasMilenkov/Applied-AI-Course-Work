@@ -58,10 +58,25 @@ body{
   flex-grow: 1;
 }
 
+.time-filter-outer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-filter-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .filter-container{
   display: flex;
   justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .filter{
@@ -75,8 +90,15 @@ body{
 }
 
 .filter:hover{
-  background-color: white;
-  color: #1e1e20;
+  outline: white solid 1px;
+}
+
+.input-filter{
+  background-color: #1e1e20;
+  color: white;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 
 .break {
@@ -90,9 +112,98 @@ body{
 }
 
 .geo-table{
-  height: 400px;
+  height: 600px;
   border-collapse: collapse;
   overflow-y: scroll;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+.geo-container{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.geo-filter{
+  width: 100px;
+}
+
+.reset-button {
+  background-color: #1e1e20;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.reset-button:hover {
+  background-color: white;
+  color: #1e1e20;
+}
+
+.rating-container{
+  display: flex;
+}
+
+.heatmap-container{
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #FFF #FFF transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #FF3D00 #FF3D00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #FFF #FFF transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+    

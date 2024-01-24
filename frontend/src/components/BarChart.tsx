@@ -1,78 +1,75 @@
-import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
+import PieData from '../interfaces/PieData';
 
-const BarChart = ({ data }) => {
+interface BarProps{
+  data?: PieData[]
+}
+
+const BarChart = ({ data }: BarProps) => {
   const chartRef = useRef();
   const width = 928;
-  const height = 600;
-  const marginTop = 10;
-  const marginRight = 10;
-  const marginBottom = 20;
+  const height = 500;
+  const marginTop = 30;
+  const marginRight = 0;
+  const marginBottom = 30;
   const marginLeft = 40;
 
   useEffect(() => {
-    // Chart dimensions and scales
-    const fx = d3.scaleBand()
-      .domain(new Set(data.map(d => d.state)))
-      .rangeRound([marginLeft, width - marginRight])
-      .paddingInner(0.1);
+    if(data === undefined) return;
 
-    const ages = new Set(data.map(d => d.age));
+    // Declare the x (horizontal position) scale.
     const x = d3.scaleBand()
-      .domain(ages)
-      .rangeRound([0, fx.bandwidth()])
-      .padding(0.05);
+    .domain(d3.groupSort(data, ([d]) => d.value, (d) => d.name)) // descending frequency
+    .range([marginLeft, width - marginRight])
+    .padding(0.1);
 
-    const color = d3.scaleOrdinal()
-      .domain(ages)
-      .range(d3.schemeSpectral[ages.size])
-      .unknown("#ccc");
-
+    // Declare the y (vertical position) scale.
     const y = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.population)]).nice()
-      .rangeRound([height - marginBottom, marginTop]);
+    .domain([0, d3.max(data, (d) => d.value)])
+    .range([height - marginBottom, marginTop]);
 
-    const formatValue = x => isNaN(x) ? "N/A" : x.toLocaleString("en");
+    // Create the SVG container.
+    const svg = d3.select(chartRef.current)
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", [0, 0, width, height])
+    .attr("style", "max-width: 100%; height: auto;");
 
-    const svg = d3.select(chartRef.current);
+    svg.selectAll('*').remove();
 
-    // Append a group for each state, and a rect for each age
-    const statesGroup = svg.selectAll("g.state")
-      .data(d3.group(data, d => d.state))
-      .join("g")
-      .attr("class", "state")
-      .attr("transform", ([state]) => `translate(${fx(state)},0)`);
-
-    statesGroup.selectAll("rect")
-      .data(([, d]) => d)
-      .join("rect")
-      .attr("x", d => x(d.age))
-      .attr("y", d => y(d.population))
-      .attr("width", x.bandwidth())
-      .attr("height", d => y(0) - y(d.population))
-      .attr("fill", d => color(d.age));
-
-    // Append the horizontal axis
+    // Add a rect for each bar.
     svg.append("g")
-      .attr("transform", `translate(0,${height - marginBottom})`)
-      .call(d3.axisBottom(fx).tickSizeOuter(0))
-      .call(g => g.selectAll(".domain").remove());
+    .attr("fill", "steelblue")
+    .selectAll()
+    .data(data)
+    .join("rect")
+    .attr("x", (d) => x(d.name))
+    .attr("y", (d) => y(d.value))
+    .attr("height", (d) => y(0) - y(d.value))
+    .attr("width", x.bandwidth());
 
-    // Append the vertical axis
+    // Add the x-axis and label.
     svg.append("g")
-      .attr("transform", `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y).ticks(null, "s"))
-      .call(g => g.selectAll(".domain").remove());
+    .attr("transform", `translate(0,${height - marginBottom})`)
+    .call(d3.axisBottom(x).tickSizeOuter(0));
+
+    // Add the y-axis and label, and remove the domain line.
+    svg.append("g")
+    .attr("transform", `translate(${marginLeft},0)`)
+    .call(d3.axisLeft(y).tickFormat((y) => (y * 1).toFixed()))
+    .call(g => g.select(".domain").remove())
+    .call(g => g.append("text")
+    .attr("x", -marginLeft)
+    .attr("y", 10)
+    .attr("fill", "currentColor")
+    .attr("text-anchor", "start")
+    .text("Value"));
+
   }, [data]);
 
   return (
-    <svg
-      ref={chartRef}
-      width={width}
-      height={height}
-      viewBox={`0 0 ${width} ${height}`}
-      style={{ maxWidth: '100%', height: 'auto' }}
-    />
+    <svg ref={chartRef}></svg>
   );
 };
 
