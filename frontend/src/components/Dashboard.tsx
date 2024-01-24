@@ -1,9 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import Filter from './Filter';
 import GeoReport from './GeoReport';
 import Graph from './Graph';
 import Heatmap from './Heatmap';
-import TimeFilter from './TimeFilter';
 import { fetchRegions } from '../services/dataService';
 import Rating from './Rating';
 
@@ -20,8 +18,6 @@ const Dashboard = () => {
   return (
     <div className='dashboard'>
       <h2>CFO Dashboard</h2>
-      <TimeFilter/>
-      <Filter/>
       <div className='dashboard-graphs'>
         <Graph element={heatmap} title={""}/>
         <div className="break"></div>

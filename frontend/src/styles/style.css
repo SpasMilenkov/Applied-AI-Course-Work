@@ -112,14 +112,32 @@ body{
 }
 
 .geo-table{
-  height: 600px;
+  height: 700px;
+  width: 100%;
   border-collapse: collapse;
   overflow-y: scroll;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+.geo-th{
+  padding: 1.5rem;
+  text-align: start;
+}
+
+.geo-td{
+  padding-inline: 1.5rem;
+}
+
+.geo-button-container{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
 .geo-container{
   display: flex;
+  align-items: center;
   gap: 1rem;
   flex-direction: column;
 }

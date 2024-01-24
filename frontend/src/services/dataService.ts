@@ -2,12 +2,14 @@ import * as d3 from 'd3';
 import axios from '../api/axios';
 import RegionFilter from '../interfaces/RegionFilter';
 import Regions from '../data/regionFilter.json'
+import fakeRegionData from '../data/fakeRegionData.json'
 import Region from '../interfaces/Region';
 import Heat from '../data/heatData.json'
 import HeatmapData from '../interfaces/HeatmapData';
 import fakeData from '../data/fakeData.json'
 import rankData from '../data/barData.json'
 import RankData from '../interfaces/RankData';
+import RegionTableData from '../interfaces/RegionTableData';
 
 export const fetchHeatmapData = async ():Promise<HeatmapData[]>=>{
   return Heat as HeatmapData[];
@@ -16,6 +18,11 @@ export const fetchHeatmapData = async ():Promise<HeatmapData[]>=>{
 export const fetchRegions = async (): Promise<RegionFilter[]> =>{
   //const result = await axios.get('/Regions');
   return Regions as RegionFilter[];
+}
+
+export const fetchRegionData = async (regionId: string): Promise<RegionTableData> =>{
+  //const result = await axios.get('/Regions');
+  return fakeRegionData as RegionTableData;
 }
 
 export const fetchGeoData = async (): Promise<Region[]> =>{

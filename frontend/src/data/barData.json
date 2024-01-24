@@ -1,11 +1,62 @@
 [
-  { "rank": "1", "badRate": 0.1, "applicationCount": 12, "repaidRate": 1 },
-  { "rank": "2", "badRate": 0.3, "applicationCount": 13, "repaidRate": 2 },
-  { "rank": "3", "badRate": 0.5, "applicationCount": 14, "repaidRate": 3 },
-  { "rank": "4", "badRate": 0.2, "applicationCount": 15, "repaidRate": 4 },
-  { "rank": "5", "badRate": 0.4, "applicationCount": 16, "repaidRate": 5 },
-  { "rank": "6", "badRate": 0.4, "applicationCount": 17, "repaidRate": 6 },
-  { "rank": "7", "badRate": 0.4, "applicationCount": 18, "repaidRate": 7 },
-  { "rank": "8", "badRate": 0.4, "applicationCount": 19, "repaidRate": 8 },
-  { "rank": "9", "badRate": 0.4, "applicationCount": 20, "repaidRate": 9 }
+  {
+    "rank": "1",
+    "applicationCount": 24650,
+    "badRate": 3,
+    "repaidRate": 7
+  },
+  {
+    "rank": "2",
+    "applicationCount": 16693,
+    "badRate": 4,
+    "repaidRate": 11
+  },
+  {
+    "rank": "3",
+    "applicationCount": 19652,
+    "badRate": 5,
+    "repaidRate": 17
+  },
+  {
+    "rank": "4",
+    "applicationCount": 18929,
+    "badRate": 6,
+    "repaidRate": 26
+  },
+  {
+    "rank": "5",
+    "applicationCount": 22989,
+    "badRate": 6,
+    "repaidRate": 32
+  },
+  {
+    "rank": "6",
+    "applicationCount": 16806,
+    "badRate": 4,
+    "repaidRate": 43
+  },
+  {
+    "rank": "7",
+    "applicationCount": 18913,
+    "badRate": 3,
+    "repaidRate": 50
+  },
+  {
+    "rank": "8",
+    "applicationCount": 14174,
+    "badRate": 2,
+    "repaidRate": 57
+  },
+  {
+    "rank": "9",
+    "applicationCount": 23609,
+    "badRate": 1,
+    "repaidRate": 68
+  },
+  {
+    "rank": "No Rank",
+    "applicationCount": 7583,
+    "badRate": 1,
+    "repaidRate": 8
+  }
 ]

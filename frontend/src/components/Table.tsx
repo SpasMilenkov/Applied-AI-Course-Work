@@ -24,72 +24,72 @@ const Table = ({regions}: RegionProps) => {
     {
       header: "ID",
       accessorKey: 'regionName',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as string}</p>
     },
     {
       header: "Name",
       accessorKey: 'regionName',
-      cell: (props) => <p>{getRegionNameById(props.getValue())}</p>
+      cell: (props) => <p>{getRegionNameById(props.getValue() as string)}</p>
     },
     {
       header: "Good",
       accessorKey: 'statistics.goodCount',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Good %",
       accessorKey: 'statistics.goodPercentage',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Bad",
       accessorKey: 'statistics.badCount',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Bad %",
       accessorKey: 'statistics.badPercentage',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Granted Amount",
       accessorKey: 'statistics.grantedAmountTotal',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Repaid Amount",
       accessorKey: 'statistics.repaidAmountTotal',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "NTU",
       accessorKey: 'statistics.ntuCount',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "NTU %",
       accessorKey: 'statistics.ntuPercentage',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Accept",
       accessorKey: 'statistics.acceptCount',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Accept %",
       accessorKey: 'statistics.acceptPercentage',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Reject",
       accessorKey: 'statistics.rejectCount',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
     {
       header: "Reject %",
       accessorKey: 'statistics.rejectPercentage',
-      cell: (props) => <p>{props.getValue()}</p>
+      cell: (props) => <p>{props.getValue() as number}</p>
     },
   ];
 
@@ -101,7 +101,7 @@ const Table = ({regions}: RegionProps) => {
         <thead>
           {table.getHeaderGroups().map(headerGroup =>(
             <tr key={headerGroup.id}>{headerGroup.headers.map(header =>(
-              <th key={header.id}>
+              <th className="geo-th" key={header.id}>
                 {header.column.columnDef.header}
               </th>
             ))}
@@ -112,7 +112,7 @@ const Table = ({regions}: RegionProps) => {
           {table.getRowModel().rows.map((row, index) =>
             <tr key={row.id+index}>
             {row.getVisibleCells().map((cell, index) =>
-              <td key={cell.id + index}>
+              <td className="geo-td" key={cell.id + index}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </td>
             )}
