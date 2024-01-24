@@ -162,6 +162,10 @@ body{
   color: #1e1e20;
 }
 
+.reset-button-margin{
+  margin-left: 1rem;
+}
+
 .rating-container{
   display: flex;
 }

@@ -36,6 +36,10 @@ const Rating = () => {
     'Repaid Rate',
   ];
 
+  const resetFilter = () => {
+    setSelectedStatus('');
+  };
+
   return (
     <div>
       <select
@@ -53,6 +57,7 @@ const Rating = () => {
             </option>
           ))}
       </select>
+      <button className="reset-button reset-button-margin" onClick={resetFilter}>Reset Filter</button>
       {isLoading && <span className="loader"></span>}
       <div className='rating-container'>
         <PieChart data={rankData}/>

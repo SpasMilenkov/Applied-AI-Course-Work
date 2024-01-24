@@ -67,6 +67,11 @@ const GeoReport = ({regions}: GeoProps) => {
 
   }, [us, geoData, namemap, selectedPercentage]);
 
+  const resetFilter = () => {
+    setSelectedPercentage('Good %');
+    setSelectedStatus('');
+  };
+
   return (
     <div className='geo-container'>
       <svg ref={svgRef}></svg>
@@ -101,6 +106,7 @@ const GeoReport = ({regions}: GeoProps) => {
             </option>
           ))}
         </select>
+        <button className="reset-button" onClick={resetFilter}>Reset Filter</button>
       </div>
       {isLoading && <span className="loader"></span>}
       {selectedStatus === '' ? 

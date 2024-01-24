@@ -124,6 +124,10 @@ const Heatmap = () => {
 
   }, [heatmapData]);
 
+  const resetFilter = () => {
+    setSelectedStatus('');
+  };
+
   return (
     <div>
       <div>
@@ -148,6 +152,7 @@ const Heatmap = () => {
           </option>
         ))}
       </select>
+      <button className="reset-button reset-button-margin" onClick={resetFilter}>Reset Filter</button>
       {isLoading && <span className="loader"></span>}
       <div className='heatmap-container' ref={chartRef}></div>
     </div>
