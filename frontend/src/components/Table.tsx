@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react"
-import fakeData from '../data/fakeData.json'
 import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
 import Region from "../interfaces/Region";
 import RegionFilter from "../interfaces/RegionFilter";
+import { useQuery } from "@tanstack/react-query";
+import { fetchGeoData } from "../services/dataService";
 
 interface RegionProps{
   regions?: RegionFilter[]
 }
 
 const Table = ({regions}: RegionProps) => {
-  const [data, setData] = useState<Region[]>([]);
+  const { data: geoData, isLoading } = useQuery({
+    queryKey: ['geo'],
+    queryFn: fetchGeoData,
+  })
 
-  useEffect(() =>{
-    setData(fakeData);
-  },[])
+  const tableData: Region[] = geoData ?? [];
 
   const getRegionNameById = (regionId: string) => {
     const region = regions?.find((r) => r.addressRegionId === Number(regionId));
@@ -93,11 +94,12 @@ const Table = ({regions}: RegionProps) => {
     },
   ];
 
-  const table = useReactTable({columns, data, getCoreRowModel: getCoreRowModel()});
+  const table = useReactTable({columns, data: tableData, getCoreRowModel: getCoreRowModel()});
 
   return (
     <div className="geo-table">
       <table>
+        {isLoading && <span className="loader"></span>}
         <thead>
           {table.getHeaderGroups().map(headerGroup =>(
             <tr key={headerGroup.id}>{headerGroup.headers.map(header =>(

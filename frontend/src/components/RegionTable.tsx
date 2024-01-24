@@ -11,7 +11,7 @@ interface RegionTableProps{
 const RegionTable = ({regionId}: RegionTableProps) => {
   const [regionData, setRegionData] = useState<RegionTableCombinedData[]>([]);
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["regionTable", regionId],
     queryFn: () => fetchRegionData(regionId)
   });
@@ -67,6 +67,7 @@ const RegionTable = ({regionId}: RegionTableProps) => {
   return (
     <div className="geo-table">
       <table>
+        {isLoading && <span className="loader"></span>}
         <thead>
           {table?.getHeaderGroups().map(headerGroup =>(
             <tr key={headerGroup.id}>{headerGroup.headers.map(header =>(
